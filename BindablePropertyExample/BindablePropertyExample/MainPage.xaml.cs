@@ -1,17 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-
+﻿﻿
 namespace BindablePropertyExample
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage
     {
+        Meeting _meeting;
+
         public MainPage()
         {
             InitializeComponent();
+
+            Meeting = new Meeting
+            {
+                Subject = "A Meeting",
+            };
+        }
+
+        public Meeting Meeting
+        {
+            get => _meeting;
+            set
+            {
+                _meeting = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

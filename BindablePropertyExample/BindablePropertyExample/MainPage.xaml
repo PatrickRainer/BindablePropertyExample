@@ -1,14 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:BindablePropertyExample"
-             x:Class="BindablePropertyExample.MainPage">
+﻿<?xml version="1.0" encoding="utf-8"?>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+<ContentPage x:Name="MyPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bindablePropertyExample="clr-namespace:BindablePropertyExample;assembly=BindablePropertyExample"
+             x:Class="BindablePropertyExample.MainPage"
+             BindingContext="{x:Reference Name=MyPage}">
+        
+    <StackLayout BackgroundColor="LightCyan">
+            <Entry Text="{Binding Meeting.Subject}"/>
+            <bindablePropertyExample:MeetingControl x:Name="MeetingControl" 
+                Subject="{Binding Meeting.Subject}"/>
+        </StackLayout>
 
 </ContentPage>
