@@ -8,7 +8,7 @@ namespace BindablePropertyExample.Controls
     {
         public static readonly BindableProperty SubjectProperty =
             BindableProperty.Create(nameof(Subject), typeof(string), typeof(MeetingControl), "default",
-                BindingMode.TwoWay, null, PropertyChanged);
+                BindingMode.TwoWay, null, SubjectPropertyChanged);
 
         public MeetingControl()
         {
@@ -22,7 +22,7 @@ namespace BindablePropertyExample.Controls
             set { SetValue(SubjectProperty, value); }
         }
 
-        static void PropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+        static void SubjectPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
             var str = (string) newvalue;
             var control = (MeetingControl) bindable;
@@ -32,19 +32,6 @@ namespace BindablePropertyExample.Controls
         void SubjectEntryOnTextChanged(object sender, TextChangedEventArgs e)
         {
             Subject = e.NewTextValue;
-        }
-
-        public string Subject
-        {
-            get => (string) GetValue(SubjectProperty);
-            set => SetValue(SubjectProperty, value);
-        }
-
-        static void SubjectPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var str = (string) newValue;
-            var control = (MeetingControl) bindable;
-            control.SubjectEntry.Text = str;
         }
     }
 }
