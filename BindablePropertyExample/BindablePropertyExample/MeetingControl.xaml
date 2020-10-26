@@ -3,12 +3,11 @@
 <ContentView x:Name="MyContentView"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BindablePropertyExample.MeetingControl"
-             BindingContext="{x:Reference MyContentView}">
+             x:Class="BindablePropertyExample.MeetingControl">
 
     <StackLayout>
         <Label Text="Subject" />
-        <Entry x:Name="SubjectEntry" />
+        <Entry x:Name="SubjectEntry" Text="{Binding Subject}" />
     </StackLayout>
 
 </ContentView>
