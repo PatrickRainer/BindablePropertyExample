@@ -1,4 +1,4 @@
-﻿﻿using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace BindablePropertyExample
@@ -7,7 +7,20 @@ namespace BindablePropertyExample
     public partial class MeetingControl
     {
         public static readonly BindableProperty SubjectProperty =
-            BindableProperty.Create(nameof(Subject), typeof(string), typeof(MeetingControl), "default", BindingMode.TwoWay, null, PropertyChanged);
+            BindableProperty.Create(nameof(Subject), typeof(string), typeof(MeetingControl), "default",
+                BindingMode.TwoWay, null, PropertyChanged);
+
+        public MeetingControl()
+        {
+            InitializeComponent();
+            SubjectEntry.TextChanged += SubjectEntryOnTextChanged;
+        }
+
+        public string Subject
+        {
+            get { return (string) GetValue(SubjectProperty); }
+            set { SetValue(SubjectProperty, value); }
+        }
 
         static void PropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
@@ -16,15 +29,9 @@ namespace BindablePropertyExample
             control.SubjectEntry.Text = str;
         }
 
-        public string Subject
+        void SubjectEntryOnTextChanged(object sender, TextChangedEventArgs e)
         {
-            get { return (string) GetValue(SubjectProperty); }
-            set { SetValue(SubjectProperty, value); }
-        }
-        
-        public MeetingControl()
-        {
-            InitializeComponent();
+            Subject = e.NewTextValue;
         }
     }
 }
