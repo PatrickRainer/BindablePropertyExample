@@ -3,13 +3,13 @@
 <ContentPage x:Name="MyPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:BindablePropertyExample;assembly=BindablePropertyExample"
+             xmlns:controls="clr-namespace:BindablePropertyExample.Controls;assembly=BindablePropertyExample"
              x:Class="BindablePropertyExample.TimePickerDemoPage"
              BindingContext="{x:Reference Name=MyPage}">
     <ContentPage.Content>
         <StackLayout>
             <Entry Text="{Binding MyTime}" />
-            <local:TimePickerControl Time="{Binding MyTime}" />
+            <controls:TimePickerControl Time="{Binding MyTime}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

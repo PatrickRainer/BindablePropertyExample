@@ -3,18 +3,17 @@
 <ContentPage x:Name="MyPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:bindablePropertyExample="clr-namespace:BindablePropertyExample;assembly=BindablePropertyExample"
+             xmlns:controls="clr-namespace:BindablePropertyExample.Controls;assembly=BindablePropertyExample"
              x:Class="BindablePropertyExample.MainPage"
              BindingContext="{x:Reference Name=MyPage}">
-        
+
     <StackLayout BackgroundColor="LightCyan">
-            <Entry Text="{Binding Meeting.Subject}"/>
-            <bindablePropertyExample:MeetingControl x:Name="MeetingControl" 
-                Subject="{Binding Meeting.Subject}"/>
-            
-            <Button x:Name="TimePickerPageButton"
-                    Text="Open Time Picker Demo"
-                    Clicked="TimePickerPageButton_OnClicked"/>
-        </StackLayout>
+        <Entry Text="{Binding Meeting.Subject}" />
+        <controls:MeetingControl
+            Subject="{Binding Meeting.Subject}" />
+
+        <Button Text="Open Time Picker Demo"
+                Clicked="TimePickerPageButton_OnClicked" />
+    </StackLayout>
 
 </ContentPage>

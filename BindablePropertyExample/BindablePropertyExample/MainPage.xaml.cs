@@ -12,7 +12,7 @@ namespace BindablePropertyExample
 
             Meeting = new Meeting
             {
-                Subject = "A Meeting",
+                Subject = "A Meeting"
             };
         }
 

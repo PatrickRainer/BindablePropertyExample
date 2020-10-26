@@ -3,7 +3,7 @@ using Syncfusion.XForms.Pickers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BindablePropertyExample
+namespace BindablePropertyExample.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TimePickerControl
@@ -23,11 +23,11 @@ namespace BindablePropertyExample
             set => SetValue(TimeProperty, value);
         }
 
-        static void TimeSpanPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+        static void TimeSpanPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var control = (TimePickerControl) bindable;
-            control.TimeEntry.Text = ((TimeSpan) newvalue).ToString(@"hh\:mm");
-            control.TimePicker.Time = (TimeSpan) newvalue;
+            control.TimeEntry.Text = ((TimeSpan) newValue).ToString(@"hh\:mm");
+            control.TimePicker.Time = (TimeSpan) newValue;
         }
 
         void TapGestureRecognizer_OnTapped(object sender, EventArgs e)

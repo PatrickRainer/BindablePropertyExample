@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 
 namespace BindablePropertyExample
 {
-    public partial class App : Application
+    public partial class App
     {
         public App()
         {

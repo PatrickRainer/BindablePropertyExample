@@ -15,6 +15,17 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Controls"/>
+        <Compile Update="Controls\MeetingControl.xaml.cs">
+            <DependentUpon>MeetingControl.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Controls\TimePickerControl.xaml.cs">
+            <DependentUpon>TimePickerControl.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="TimePickerDemoPage.xaml.cs">
+            <DependentUpon>TimePickerDemoPage.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 </Project>

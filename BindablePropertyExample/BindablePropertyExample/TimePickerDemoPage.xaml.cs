@@ -1,11 +1,10 @@
 using System;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace BindablePropertyExample
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TimePickerDemoPage : ContentPage
+    public partial class TimePickerDemoPage
     {
         TimeSpan _myTime;
 
