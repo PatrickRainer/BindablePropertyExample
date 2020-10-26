@@ -7,7 +7,7 @@
 
     <StackLayout>
         <Label Text="Subject" />
-        <Entry x:Name="SubjectEntry" Text="{Binding Subject}" />
+        <Entry x:Name="SubjectEntry"/>
     </StackLayout>
 
 </ContentView>
