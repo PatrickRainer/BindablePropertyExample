@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Foundation;
+﻿using Foundation;
+using Syncfusion.XForms.Pickers.iOS;
 using UIKit;
 
 namespace BindablePropertyExample.iOS
@@ -23,6 +21,8 @@ namespace BindablePropertyExample.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            SfTimePickerRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

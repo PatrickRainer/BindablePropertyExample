@@ -11,6 +11,10 @@
             <Entry Text="{Binding Meeting.Subject}"/>
             <bindablePropertyExample:MeetingControl x:Name="MeetingControl" 
                 Subject="{Binding Meeting.Subject}"/>
+            
+            <Button x:Name="TimePickerPageButton"
+                    Text="Open Time Picker Demo"
+                    Clicked="TimePickerPageButton_OnClicked"/>
         </StackLayout>
 
 </ContentPage>

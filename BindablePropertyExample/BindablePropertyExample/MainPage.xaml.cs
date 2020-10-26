@@ -1,4 +1,5 @@
-﻿﻿
+﻿using System;
+
 namespace BindablePropertyExample
 {
     public partial class MainPage
@@ -23,6 +24,11 @@ namespace BindablePropertyExample
                 _meeting = value;
                 OnPropertyChanged();
             }
+        }
+
+        void TimePickerPageButton_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TimePickerDemoPage());
         }
     }
 }
