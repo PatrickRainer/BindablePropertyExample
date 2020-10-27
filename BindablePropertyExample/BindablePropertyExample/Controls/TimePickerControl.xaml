@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentView x:Name="MyContentView"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pickers="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              x:Class="BindablePropertyExample.Controls.TimePickerControl">
@@ -8,7 +9,8 @@
     <StackLayout>
         <Frame Padding="0" BackgroundColor="Transparent">
             <Entry x:Name="TimeEntry"
-                   Text="Placeholder"
+                   Text="{Binding Source={x:Reference MyContentView},
+                   Path=Time}"
                    IsReadOnly="True"
                    InputTransparent="True"
                    BackgroundColor="Transparent" />
@@ -21,7 +23,9 @@
                               IsOpen="False"
                               Format="HH_mm"
                               HeaderText=""
-                              TimeSelected="TimePicker_OnTimeSelected" />
+                              PickerWidth="160"
+                              Time="{Binding Source={x:Reference MyContentView},
+                             Path=Time}" />
     </StackLayout>
 
 </ContentView>

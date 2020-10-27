@@ -25,9 +25,9 @@ namespace BindablePropertyExample.Controls
 
         static void TimeSpanPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (TimePickerControl) bindable;
+            /*var control = (TimePickerControl) bindable;
             control.TimeEntry.Text = ((TimeSpan) newValue).ToString(@"hh\:mm");
-            control.TimePicker.Time = (TimeSpan) newValue;
+            control.TimePicker.Time = (TimeSpan) newValue;*/
         }
 
         void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace BindablePropertyExample.Controls
 
         void TimePicker_OnTimeSelected(object sender, TimeChangedEventArgs e)
         {
-            Time = (TimeSpan) e.NewValue;
+            /*Time = (TimeSpan) e.NewValue;*/
         }
     }
 }
