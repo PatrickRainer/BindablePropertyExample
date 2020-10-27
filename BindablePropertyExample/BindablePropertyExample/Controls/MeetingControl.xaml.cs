@@ -13,7 +13,7 @@ namespace BindablePropertyExample.Controls
         public MeetingControl()
         {
             InitializeComponent();
-            SubjectEntry.TextChanged += SubjectEntryOnTextChanged;
+            //SubjectEntry.TextChanged += SubjectEntryOnTextChanged;
         }
 
         public string Subject
@@ -24,14 +24,14 @@ namespace BindablePropertyExample.Controls
 
         static void SubjectPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
-            var str = (string) newvalue;
+            /*var str = (string) newvalue;
             var control = (MeetingControl) bindable;
-            control.SubjectEntry.Text = str;
+            control.SubjectEntry.Text = str;*/
         }
 
-        void SubjectEntryOnTextChanged(object sender, TextChangedEventArgs e)
+        /*void SubjectEntryOnTextChanged(object sender, TextChangedEventArgs e)
         {
             Subject = e.NewTextValue;
-        }
+        }*/
     }
 }
