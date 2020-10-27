@@ -18,20 +18,15 @@ namespace BindablePropertyExample.Controls
 
         public string Subject
         {
-            get { return (string) GetValue(SubjectProperty); }
-            set { SetValue(SubjectProperty, value); }
+            get => (string) GetValue(SubjectProperty);
+            set => SetValue(SubjectProperty, value);
         }
 
-        static void SubjectPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+        static void SubjectPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            /*var str = (string) newvalue;
+            /*var str = (string) newValue;
             var control = (MeetingControl) bindable;
             control.SubjectEntry.Text = str;*/
         }
-
-        /*void SubjectEntryOnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            Subject = e.NewTextValue;
-        }*/
     }
 }

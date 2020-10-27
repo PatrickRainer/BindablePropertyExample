@@ -8,7 +8,7 @@
     <StackLayout>
         <Label Text="Subject" />
         <Entry x:Name="SubjectEntry"
-               Text="{Binding Source={x:Reference MyContentView},Path=Subject}"/>
+               Text="{Binding Source={x:Reference MyContentView},Path=Subject}" />
     </StackLayout>
 
 </ContentView>

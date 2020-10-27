@@ -1,5 +1,4 @@
 using System;
-using Syncfusion.XForms.Pickers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -33,11 +32,6 @@ namespace BindablePropertyExample.Controls
         void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
         {
             TimePicker.IsOpen = true;
-        }
-
-        void TimePicker_OnTimeSelected(object sender, TimeChangedEventArgs e)
-        {
-            /*Time = (TimeSpan) e.NewValue;*/
         }
     }
 }
